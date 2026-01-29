@@ -1,0 +1,23 @@
+@import "tailwindcss";
+
+/* Smooth, professional transitions */
+* {
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease,
+    transform 0.25s ease;
+}
+
+/* Light theme (default) */
+html {
+  background-color: #f8fafc; /* slate-50 */
+  color: #0f172a; /* slate-900 */
+}
+
+/* Dark theme */
+html.dark {
+  background-color: #0b1220;
+  color: #e5e7eb;
+}
