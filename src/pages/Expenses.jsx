@@ -39,7 +39,7 @@ export default function Expenses() {
 
   const user = JSON.parse(localStorage.getItem("currentUser"));
 
-  const categories = ["Food", "Transport", "Entertainment", "Bills", "Other"];
+  const categories = ["Food", "Transport", "Entertainment", "Bills", "Medical", "Other"];
 
   const isFormValid = title && amount && category;
 
@@ -86,8 +86,6 @@ export default function Expenses() {
       timeStyle: "short",
     });
 
-  /* ---------------- FILTER + PAGINATION ---------------- */
-
   const filteredExpenses = useMemo(() => {
     const data =
       activeCategory === "All"
@@ -104,8 +102,7 @@ export default function Expenses() {
 
   const hasMore = totalFilteredCount > visibleCount;
 
-  /* ---------------- DASHBOARD DATA ---------------- */
-
+//  dashboard
   const categoryData = useMemo(() => {
     const data = {};
     dashboardExpenses.forEach((e) => {
@@ -120,11 +117,12 @@ export default function Expenses() {
       {
         data: Object.values(categoryData),
         backgroundColor: [
-          "#3B82F6",
-          "#10B981",
-          "#6366F1",
-          "#F59E0B",
-          "#EF4444",
+          "#1E40AF",
+          "#059669",
+          "#B91C1C",
+          "#CA8A04",
+          "#7C3AED",
+          "#DB2777",
         ],
         borderWidth: 0,
       },
@@ -153,7 +151,6 @@ export default function Expenses() {
     ],
   };
 
-  /* ---------------- BUTTON COLORS ---------------- */
   const btnBaseLight = "bg-slate-200 text-slate-800 hover:bg-slate-300";
   const btnBaseDark = "bg-[#0b1220] border border-white/10 text-white hover:bg-white/5";
   const categoryBtnBaseLight = "bg-slate-200 text-slate-800 hover:bg-slate-300";
