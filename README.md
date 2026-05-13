@@ -41,8 +41,8 @@ This application includes a **Dashboard** that visually represents expenses in *
 ### 1️⃣ Clone the Repository
 
 ```
-git clone https://github.com/madupojumounika/Expense-Tracker.git
-cd Expense-Tracker
+git clone https://github.com/madupojumounika/expense-tracker.git
+cd expense-tracker
 ```
 ### 2️⃣ Install Dependencies
 ```
