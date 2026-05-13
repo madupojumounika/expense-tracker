@@ -1,6 +1,7 @@
 @import "tailwindcss";
 
-/* Smooth, professional transitions */
+@custom-variant dark (&:where(.dark, .dark *));
+
 * {
   transition:
     background-color 0.25s ease,
@@ -10,13 +11,11 @@
     transform 0.25s ease;
 }
 
-/* Light theme (default) */
 html {
-  background-color: #f8fafc; /* slate-50 */
-  color: #0f172a; /* slate-900 */
+  background-color: #f8fafc;
+  color: #0f172a;
 }
 
-/* Dark theme */
 html.dark {
   background-color: #0b1220;
   color: #e5e7eb;

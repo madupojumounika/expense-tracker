@@ -7,8 +7,9 @@ import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 
 function App() {
+  document.documentElement.classList.add("dark");
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 dark:bg-[#0b1220] transition-colors duration-300">
       <Header />
 
       <Routes>

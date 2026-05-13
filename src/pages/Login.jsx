@@ -7,9 +7,12 @@ export default function Login() {
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
   const { setExpenses, setDashboardExpenses } = useContext(ExpenseContext);
+  const [loading, setLoading] = useState(false);
 
   const handleLogin = (e) => {
     e.preventDefault();
+
+    setLoading(true);
 
     const users = JSON.parse(localStorage.getItem("users")) || [];
     const user = users.find(
@@ -28,10 +31,16 @@ export default function Login() {
       setExpenses(userExpenses);
       setDashboardExpenses(userDashboard);
 
-      alert(`Welcome back, ${user.name}`);
-      navigate("/");
+      console.log(`Welcome back, ${user.name}`);
+
+      setTimeout(() =>{
+        setLoading(false);
+        navigate("/expenses");  
+      }, 500);
+      
     } else {
       alert("Invalid email or password");
+      setLoading(false);
     }
   };
 
@@ -85,11 +94,12 @@ export default function Login() {
           />
 
           <button
+            disabled={loading}
             className="w-full py-2.5 rounded-lg font-medium
                        bg-blue-600 hover:bg-blue-700
                        text-white transition shadow-md"
           >
-            Login
+            {loading ? "Logging in..." : "Login"}
           </button>
         </form>
 
